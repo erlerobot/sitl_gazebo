@@ -159,6 +159,16 @@ add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
   )
 add_custom_target(sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf)
 
+#set(erlecopter_dir "${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter")
+#add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf
+#  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf
+#  COMMAND python ${scripts_dir}/xacro.py -o  ${erlecopter_dir}/urdf/erlecopter_base.urdf  ${erlecopter_dir}/urdf/erlecopter_base.xacro enable_mavlink_interface:=${enable_mavlink_interface} enable_ground_truth:=${enable_ground_truth} enable_logging:=${enable_logging} erlecopter_dir:=${erlecopter_dir}
+#  COMMAND gz sdf -p  ${erlecopter_dir}/urdf/erlecopter_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf
+#  COMMAND rm -f ${erlecopter_dir}/urdf/erlecopter_base.urdf
+#  )
+#add_custom_target(sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf)
+
 #--------------------#
 # Message Generation #
 #--------------------#
