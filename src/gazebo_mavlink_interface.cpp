@@ -603,13 +603,20 @@ void GazeboMavlinkInterface::ImuCallback(ImuPtr& imu_message) {
   // gzerr << "got imu: " << C_W_I << "\n";
   float declination = get_mag_declination(lat_rad, lon_rad);
 
+  // add magnetic variation based on height
+  float mag_decl_bias = pos_W_I.z*0.1;
+  if (fabs(mag_decl_bias) > 1) {
+	  mag_decl_bias = mag_decl_bias/fabs(mag_decl_bias);
+  }
+  declination += mag_decl_bias;
+
   math::Quaternion C_D_I(0.0, 0.0, declination);
 
   math::Vector3 mag_decl = C_D_I.RotateVectorReverse(mag_W_);
 
   // TODO replace mag_W_ in the line below with mag_decl
 
-  math::Vector3 mag_I = C_W_I.RotateVectorReverse(mag_decl); // TODO: Add noise based on bais and variance like for imu and gyro
+  math::Vector3 mag_I = C_W_I.RotateVectorReverse(mag_decl); // TODO: Add noise based on bias and variance like for imu and gyro
   math::Vector3 body_vel = C_W_I.RotateVectorReverse(model_->GetWorldLinearVel());
   
   standard_normal_distribution_ = std::normal_distribution<float>(0, 0.01f);
