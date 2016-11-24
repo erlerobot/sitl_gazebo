@@ -82,6 +82,10 @@ else()
   set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 endif()
 
+if (NOT "${PROTOBUF_VERSION}" VERSION_LESS "3.2.0" OR
+  "${PROTOBUF_VERSION}" VERSION_LESS "2.5.0")
+  message(FATAL_ERROR "protobuf version: ${PROTOBUF_VERSION} not compatible, must be >= 2.5.0 and < 3.2.0")
+endif()
 find_package(Boost 1.40 COMPONENTS system thread timer REQUIRED )
 
 ###########
@@ -146,11 +150,7 @@ set(scripts_dir "${CMAKE_CURRENT_SOURCE_DIR}/scripts")
 add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
   COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
-<<<<<<< HEAD
   COMMAND python ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/iris_base.urdf  ${rotors_description_dir}/urdf/iris_base.xacro enable_mavlink_interface:=${enable_mavlink_interface} enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir}
-=======
-  COMMAND python ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/iris_base.urdf  ${rotors_description_dir}/urdf/iris_base.xacro enable_mavlink_interface:=${enable_mavlink_interface} enable_ground_truth:=${enable_ground_truth} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir}
->>>>>>> CMakeLists.txt: increase protobuf version support
   COMMAND gz sdf -p  ${rotors_description_dir}/urdf/iris_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
   COMMAND rm -f ${rotors_description_dir}/urdf/iris_base.urdf
   DEPENDS ${rotors_description_dir}/urdf/iris.xacro
@@ -158,16 +158,6 @@ add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
   DEPENDS ${rotors_description_dir}/urdf/component_snippets.xacro
   )
 add_custom_target(sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf)
-
-#set(erlecopter_dir "${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter")
-#add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf
-#  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-#  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf
-#  COMMAND python ${scripts_dir}/xacro.py -o  ${erlecopter_dir}/urdf/erlecopter_base.urdf  ${erlecopter_dir}/urdf/erlecopter_base.xacro enable_mavlink_interface:=${enable_mavlink_interface} enable_ground_truth:=${enable_ground_truth} enable_logging:=${enable_logging} erlecopter_dir:=${erlecopter_dir}
-#  COMMAND gz sdf -p  ${erlecopter_dir}/urdf/erlecopter_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf
-#  COMMAND rm -f ${erlecopter_dir}/urdf/erlecopter_base.urdf
-#  )
-#add_custom_target(sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf ${CMAKE_CURRENT_SOURCE_DIR}/models/erlecopter/copter.sdf)
 
 #--------------------#
 # Message Generation #
@@ -221,14 +211,15 @@ set(plugins
   gazebo_geotagged_images_plugin
   )
 
-if (GSTREAMER_FOUND)
-  add_library(gazebo_gst_camera_plugin SHARED src/gazebo_gst_camera_plugin.cpp)
-  set(plugins
-    ${plugins}
-    gazebo_gst_camera_plugin
-  )
-  message(STATUS "Found GStreamer: adding gst_camera_plugin")
-endif()
+#if (GSTREAMER_FOUND)
+#  add_library(gazebo_gst_camera_plugin SHARED src/gazebo_gst_camera_plugin.cpp)
+#  set(plugins
+#    ${plugins}
+#    gazebo_gst_camera_plugin
+#  )
+#  message(STATUS "Found GStreamer: adding gst_camera_plugin")
+#  message(STATUS "${GSTREAMER_LIBRARIES} ${GSTREAMER_INCLUDE_DIRS}")
+#endif()
 
 # Linux is not consistent with plugin availability, even on Gazebo 7
 #if("${GAZEBO_VERSION}" VERSION_LESS "7.0")

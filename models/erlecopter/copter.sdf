@@ -4,7 +4,7 @@
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>1.1</mass>
+        <mass>1.5</mass>
         <inertia>
           <ixx>0.0347563</ixx>
           <ixy>0</ixy>
@@ -18,7 +18,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.12 0.12 0.1</size>
+            <size>0.47 0.47 0.11</size>
           </box>
         </geometry>
         <surface>
@@ -79,7 +79,7 @@
       </axis>
     </joint>
     <link name='rotor_0'>
-      <pose frame=''>0.141 -0.141 0.03 0 -0 0</pose>
+      <pose frame=''>0.14 -0.14 0.03 0 -0 0</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
@@ -87,9 +87,9 @@
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000240038</iyy>
+          <iyy>0.000273104</iyy>
           <iyz>0</iyz>
-          <izz>0.000240937</izz>
+          <izz>0.000274004</izz>
         </inertia>
       </inertial>
       <collision name='rotor_0_collision'>
@@ -97,7 +97,7 @@
         <geometry>
           <cylinder>
             <length>0.005</length>
-            <radius>0.12</radius>
+            <radius>0.128</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -119,7 +119,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Yellow</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -144,7 +144,7 @@
       </axis>
     </joint>
     <link name='rotor_1'>
-      <pose frame=''>-0.141 0.141 0.03 0 -0 0</pose>
+      <pose frame=''>-0.14 0.14 0.03 0 -0 0</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
@@ -152,9 +152,9 @@
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000240038</iyy>
+          <iyy>0.000273104</iyy>
           <iyz>0</iyz>
-          <izz>0.000240937</izz>
+          <izz>0.000274004</izz>
         </inertia>
       </inertial>
       <collision name='rotor_1_collision'>
@@ -162,7 +162,7 @@
         <geometry>
           <cylinder>
             <length>0.005</length>
-            <radius>0.12</radius>
+            <radius>0.128</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -209,7 +209,7 @@
       </axis>
     </joint>
     <link name='rotor_2'>
-      <pose frame=''>0.141 0.141 0.03 0 -0 0</pose>
+      <pose frame=''>0.14 0.14 0.03 0 -0 0</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
@@ -217,9 +217,9 @@
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000240038</iyy>
+          <iyy>0.000273104</iyy>
           <iyz>0</iyz>
-          <izz>0.000240937</izz>
+          <izz>0.000274004</izz>
         </inertia>
       </inertial>
       <collision name='rotor_2_collision'>
@@ -227,7 +227,7 @@
         <geometry>
           <cylinder>
             <length>0.005</length>
-            <radius>0.12</radius>
+            <radius>0.128</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -274,7 +274,7 @@
       </axis>
     </joint>
     <link name='rotor_3'>
-      <pose frame=''>-0.141 -0.141 0.03 0 -0 0</pose>
+      <pose frame=''>-0.14 -0.14 0.03 0 -0 0</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
@@ -282,9 +282,9 @@
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000240038</iyy>
+          <iyy>0.000273104</iyy>
           <iyz>0</iyz>
-          <izz>0.000240937</izz>
+          <izz>0.000274004</izz>
         </inertia>
       </inertial>
       <collision name='rotor_3_collision'>
@@ -292,7 +292,7 @@
         <geometry>
           <cylinder>
             <length>0.005</length>
-            <radius>0.12</radius>
+            <radius>0.128</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -314,7 +314,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Black</name>
+            <name>Gazebo/Yellow</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -350,12 +350,12 @@
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>838</maxRotVelocity>
+      <maxRotVelocity>1100</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
@@ -367,12 +367,12 @@
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>838</maxRotVelocity>
+      <maxRotVelocity>1100</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>1</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
@@ -384,12 +384,12 @@
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>838</maxRotVelocity>
+      <maxRotVelocity>1100</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>2</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
@@ -401,12 +401,12 @@
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>838</maxRotVelocity>
+      <maxRotVelocity>1100</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>3</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
@@ -414,7 +414,105 @@
     <plugin name='mavlink_interface' filename='librotors_gazebo_mavlink_interface.so'>
       <robotNamespace/>
       <imuSubTopic>/imu</imuSubTopic>
+      <mavlink_addr>INADDR_ANY</mavlink_addr>
+      <mavlink_udp_port>14560</mavlink_udp_port>
       <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+      <control_channels>
+        <channel name='rotor1'>
+          <input_index>0</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1000</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name='rotor2'>
+          <input_index>1</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1000</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name='rotor3'>
+          <input_index>2</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1000</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name='rotor4'>
+          <input_index>3</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1000</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name='rotor5'>
+          <input_index>4</input_index>
+          <input_offset>1</input_offset>
+          <input_scaling>324.6</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_control_pid>
+            <p>0.1</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0.0</iMax>
+            <iMin>0.0</iMin>
+            <cmdMax>2</cmdMax>
+            <cmdMin>-2</cmdMin>
+          </joint_control_pid>
+          <joint_name>zephyr_delta_wing::propeller_joint</joint_name>
+        </channel>
+        <channel name='rotor6'>
+          <input_index>5</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>0.524</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>zephyr_delta_wing::flap_left_joint</joint_name>
+          <joint_control_pid>
+            <p>10.0</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>20</cmdMax>
+            <cmdMin>-20</cmdMin>
+          </joint_control_pid>
+        </channel>
+        <channel name='rotor7'>
+          <input_index>6</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>0.524</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>zephyr_delta_wing::flap_right_joint</joint_name>
+          <joint_control_pid>
+            <p>10.0</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>20</cmdMax>
+            <cmdMin>-20</cmdMin>
+          </joint_control_pid>
+        </channel>
+        <channel name='rotor8'>
+          <input_index>7</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>0.524</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+        </channel>
+      </control_channels>
     </plugin>
     <static>0</static>
     <plugin name='rotors_gazebo_imu_plugin' filename='librotors_gazebo_imu_plugin.so'>
